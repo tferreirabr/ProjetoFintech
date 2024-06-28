@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 200vh;
+    background-color: #e3e9f7;
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1;
+    padding-left: calc(82px + 20px);
+    font-size: 12px; /* Reduz o tamanho da fonte do main */
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e3e9f7;
+    height: 200vh;
+    border-radius: 0px 18px 18px 0px;
+    position: relative;
+    transition: all .5s;
+    min-width: 82px; 
+    z-index: 2;
+
+}
+
+#sidebar_content {
+    padding: 7px;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 35px;
+}
+
+#user_avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+#user_infos {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px; 
+}
+
+#user_infos span:last-child {
+    color: #6b6b6b;
+    font-size: 10px; 
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    margin-left: 0; /* Remove a margem esquerda do .side-item */
+}
+
+.side-item.active {
+    background-color: #A6DDA5;
+}
+
+.side-item:hover:not(.active),
+#Logout_btn:hover {
+    background-color: #b8bcc5;
+}
+
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o texto e o ícone à esquerda */
+    color: #0a0a0a;
+}
+
+.side-item.active a {
+    color: #1b1b1c;
+}
+
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+#Logout {
+    border-top: 1px solid #e3e9f7;
+    padding: 12px;
+}
+
+#Logout_btn {
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#open_btn {
+    position: absolute;
+    top: 30px;
+    right: -5px;
+    background-color: #A6DDA5;
+    color: #252628;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#open_btn_icon {
+    transition: transforme .3s ease;
+}
+
+.open-sidebar #open_btn_icon {
+    transform: rotate(180deg);
+}
+
+.item-description {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    transition: width .6s;
+    height: 0px;
+
+}
+
+#sidebar.open-sidebar {
+    min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description {
+    width: 120px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+* Estilização do Botão */
+#Cadastro {
+    border-top: 1px solid #e3e9f7;
+    padding: 12px;
+}
+
+#cadastro_btn {
+    border: none;
+      background-color: #A6DDA5;
+    color: #141415;
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+  /* Estilização da Tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.right-align {
+    text-align: right;
+}
+
+  /* Responsividade da Tabela */
+@media (max-width: 768px) {
+    /* Ajusta o tamanho das colunas para telas menores */
+    .table th:nth-child(1),
+    .table td:nth-child(1) {
+      display: none; /* Oculta a primeira coluna */
+    }
+
+    .table th:nth-child(3),
+    .table td:nth-child(3) {
+      display: none; /* Oculta a terceira coluna */
+    }
+
+    .table th:nth-child(5),
+    .table td:nth-child(5) {
+      display: none; /* Oculta a quinta coluna */
+    }
+}
+
+  /* Estilização do Botão */
+.container .btn-cadastro {
+    display: block;
+    margin: 0 auto;
+}
+
+  /* Responsividade para telas menores (360x800) */
+@media (max-width: 360px) {
+    .table {
+      font-size: 12px; /* Reduz o tamanho da fonte */
+    }
+
+    .table th,
+    .table td {
+      padding: 5px; /* Reduz o espaçamento interno */
+    }
+
+    /* Ajusta a largura das colunas para melhor visualização */
+    .table th:nth-child(2),
+    .table td:nth-child(2) {
+      width: 40%; /* Ajuste conforme necessário */
+    }
+
+    .table th:nth-child(4),
+    .table td:nth-child(4) {
+      width: 20%; /* Ajuste conforme necessário */
+    }
+
+    .table th:nth-child(6),
+    .table td:nth-child(6) {
+      width: 20%; /* Ajuste conforme necessário */
+    }
+
+    .table th:nth-child(7),
+    .table td:nth-child(7) {
+      width: 20%; /* Ajuste conforme necessário */
+    }
+}
